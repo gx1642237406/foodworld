@@ -1,32 +1,57 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Nav-header></Nav-header>
+    <router-view></router-view>
+    <Nav-footer></Nav-footer>
   </div>
 </template>
 
+<script>
+
+import Home from "@/views/Home";
+import NavHeader from "@/components/NavHeader";
+import NavFooter from "@/components/NavFooter";
+
+export default {
+  name: 'app',
+  components: {
+    Home,
+    NavHeader,
+    NavFooter
+  },
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 1920px;
+  min-height: 1080px;
+  position: relative;
 }
 
-#nav {
-  padding: 30px;
+a {
+  text-decoration: none;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.home {
+  width: 100%;
+  background: #fae8c8;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: #fae8c8;
+}
+
+.menuDetails {
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff;
 }
 </style>
